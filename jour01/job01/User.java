@@ -5,7 +5,7 @@ public class User {
 
     public static String askInput(){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Enter something:");
+        System.out.println("Renseignez quelque chose:");
         String userInput = myScanner.nextLine();
         myScanner.close();
         return userInput;
