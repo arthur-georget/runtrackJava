@@ -53,7 +53,7 @@ public class ABCDEF {
         byte sum = 0;
         for(A element : as){
             if (element instanceof D){
-                //sum += element;
+                sum += ((D)element).getD();
             }
         }
         System.out.println(String.format("Somme des variables d: %s",sum));
