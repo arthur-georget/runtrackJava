@@ -25,16 +25,10 @@ public class ColoredRectangle extends Rectangle {
     }
 
     public boolean equals(Rectangle rectangleToCompare) {
-        if (rectangleToCompare instanceof ColoredRectangle){
-            if ( super.equals((Rectangle)rectangleToCompare) &&
-               (((ColoredRectangle)rectangleToCompare).getColor().equals(this.getColor()))){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        else{
+        if (rectangleToCompare instanceof ColoredRectangle) {
+            return super.equals((Rectangle) rectangleToCompare) &&
+                    ((ColoredRectangle) rectangleToCompare).getColor().equals(this.getColor());
+        } else {
             return false;
         }
     }

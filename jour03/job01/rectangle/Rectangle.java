@@ -1,6 +1,5 @@
 package jour03.job01.rectangle;
 
-
 public class Rectangle {
     protected double width;
     protected double height;
@@ -36,17 +35,11 @@ public class Rectangle {
     }
 
     public boolean equals(Rectangle rectangleToCompare) {
-        if (rectangleToCompare == null){
+        if (rectangleToCompare == null) {
             return false;
-        }
-        else if (rectangleToCompare.getHeight() == this.getHeight() && 
-                 rectangleToCompare.getWidth() == this.getWidth()
-        ){
-            return true;
-        }
-        else{
-            return false;
+        } else {
+            return rectangleToCompare.getHeight() == this.getHeight() &&
+                    rectangleToCompare.getWidth() == this.getWidth();
         }
     }
-
 }
