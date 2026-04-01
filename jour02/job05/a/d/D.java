@@ -12,4 +12,8 @@ public class D extends A {
     public D(){
 
     }
+
+    public int getD(){
+        return this.d;
+    }
 }
