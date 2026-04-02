@@ -7,13 +7,13 @@ public class User {
         Scanner myScanner = new Scanner(System.in);
         while(true){
             try {
-                System.out.println("Renseignez une taille de chaîne de caractère à générer:");
+                System.out.println("Provide a size for the string to generate:");
                 String userInput = myScanner.nextLine();
                 int userNumber = Integer.parseInt(userInput);
                 myScanner.close();
                 return userNumber;
             } catch (Exception e) {
-                System.out.println("Ce n'est pas un nombre!");
+                System.out.println("This is not a number!");
             }    
         }
     }

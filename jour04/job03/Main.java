@@ -2,7 +2,9 @@ package jour04.job03;
 import java.io.FileWriter;
 import java.io.IOException;
 // Results for 250 000 characters generation:
-// 6514306000 / 5715089300 / 5696265300 / 5656798100 / 6579494200
+// 2 threads: 6514306000 / 5715089300 / 5696265300 / 5656798100 / 6579494200
+// 4 threads: 6862375700 / 4600681300 / 6534964200 / 4381014100 / 4023869100
+// 8 threads: 5876867900 / 4364985600 / 3981538100 / 4249178100 / 3158537700
 public class Main
 {
     public static void main(String[] args){
@@ -11,7 +13,8 @@ public class Main
         int stringSize = User.askSize();
         String keyPath = System.getProperty("user.dir") + "\\output.txt";
         String generatedString = "";
-        StringGenerator[] stringGenerators = {new StringGenerator(stringSize/2),new StringGenerator(stringSize/2)};
+        StringGenerator[] stringGenerators = {new StringGenerator(stringSize/2),
+                                              new StringGenerator(stringSize/2)};
         
         for(StringGenerator stringGenerator : stringGenerators){
             stringGenerator.start();

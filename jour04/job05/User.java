@@ -1,15 +1,15 @@
-package jour04.job02;
+package jour04.job05;
 import java.util.Scanner;
 
 public class User {
 
-    public static int askSize(){
+    public static long askNumberToCountTo(){
         Scanner myScanner = new Scanner(System.in);
         while(true){
             try {
-                System.out.println("Provide a size for the string to generate:");
+                System.out.println("Provide a number to count to:");
                 String userInput = myScanner.nextLine();
-                int userNumber = Integer.parseInt(userInput);
+                long userNumber = Long.parseLong(userInput);
                 myScanner.close();
                 return userNumber;
             } catch (Exception e) {
