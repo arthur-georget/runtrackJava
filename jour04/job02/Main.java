@@ -1,14 +1,15 @@
 package jour04.job02;
 import java.io.FileWriter;
 import java.io.IOException;
-
+// Results for 250 000 characters generation:
+// 8993251600 / 9373856300 / 10232152300 / 8564043200 / 8692366300
 public class Main
 {
     public static void main(String[] args){
         long start = System.nanoTime();
 
         int stringSize = User.askSize();
-        String keyPath = System.getProperty("user.dir") + "\\key.txt";
+        String keyPath = System.getProperty("user.dir") + "\\output.txt";
         StringGenerator stringGenerator = new StringGenerator(stringSize);
         stringGenerator.start();
         synchronized (stringGenerator){
