@@ -34,12 +34,13 @@ public class Rectangle {
         return String.format("Rectangle:\n  largeur = %s\n  hauteur = %s", this.width, this.height);
     }
 
-    public boolean equals(Rectangle rectangleToCompare) {
-        if (rectangleToCompare == null) {
+    @Override
+    public boolean equals(Object rectangleToCompare) {
+        if (rectangleToCompare == null || this.getClass() != rectangleToCompare.getClass()) {
             return false;
         } else {
-            return rectangleToCompare.getHeight() == this.getHeight() &&
-                    rectangleToCompare.getWidth() == this.getWidth();
+            return ((Rectangle)rectangleToCompare).getHeight() == this.getHeight() &&
+                   ((Rectangle)rectangleToCompare).getWidth() == this.getWidth();
         }
     }
 }
