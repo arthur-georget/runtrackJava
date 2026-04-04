@@ -7,8 +7,12 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToolBar;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
@@ -21,17 +25,25 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        BorderPane borderPane = new BorderPane();
-        ToolBar toolbar = new ToolBar();
-        Button exitButton = new Button("Close the app");
+        
+        Label name = new Label("Nom: ");
+        TextField nameInput = new TextField();
+        Button sendButton = new Button("Envoyer");
+        FlowPane flowPane = new FlowPane(20.0, 20.0,name,nameInput,sendButton);
+
+        Button exitButton = new Button("Quitter");
         exitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Platform.exit();
             }
         });
-        borderPane.setTop(toolbar);
+
+        BorderPane borderPane = new BorderPane();
+
+        borderPane.setCenter(flowPane);
         borderPane.setBottom(exitButton);
+
         scene = new Scene(borderPane, 640, 480);
         stage.setScene(scene);
         stage.show();
