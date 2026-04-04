@@ -30,6 +30,12 @@ public class App extends Application {
         Label name = new Label("Nom: ");
         TextField nameInput = new TextField();
         Button sendButton = new Button("Envoyer");
+        sendButton.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+                System.out.println(nameInput.getText());
+            }
+        });
         FlowPane flowPane = new FlowPane(20.0, 20.0,name,nameInput,sendButton);
 
         Button exitButton = new Button("Quitter");
