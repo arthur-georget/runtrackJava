@@ -24,7 +24,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        
+        stage.setTitle("Mon application JavaFX du jour 05");
+
+
         Label name = new Label("Nom: ");
         TextField nameInput = new TextField();
         Button sendButton = new Button("Envoyer");
@@ -44,6 +46,7 @@ public class App extends Application {
         borderPane.setBottom(exitButton);
 
         scene = new Scene(borderPane, 640, 480);
+        scene.getStylesheets().add("styles.css");
         stage.setScene(scene);
         stage.show();
     }
